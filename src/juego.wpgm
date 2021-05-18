@@ -1,8 +1,17 @@
 import wollok.game.*
-import pepita.*
+import pacman.*
 
 program juego {
-	game.title("Juego Base")
-	game.addVisual(pepita)
+	game.title("Pac-Man")
+		// tamaño pantalla
+	game.height(20)
+	game.width(15)
+		// fondo
+	game.ground("fondo-negro.jpg")
+		// tamaño celda
+	game.cellSize(50)
+		// jugador 1
+	game.addVisualCharacter(pacman1)
+		// inicializacion del juego
 	game.start()
 }

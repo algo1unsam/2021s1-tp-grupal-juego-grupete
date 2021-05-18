@@ -3,11 +3,8 @@ import wollok.game.*
 class Pacman {
 	
 	var property position = new Position(x = 2, y = 2)
-	var image	
+	var property image = "pacman1.png"	
 
-	method image() {
-		//imagen del pacman
-	}
 	
 	method moverPacman(apunta) {
 	
