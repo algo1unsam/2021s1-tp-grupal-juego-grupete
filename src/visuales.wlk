@@ -1,10 +1,6 @@
 import wollok.game.*
-import tanquesito.*
-import movimientos.*
-import balas.*
-import enemigos.*
-import muros.*
-import levels.*
+import movimiento.*
+import pacman1.*
 
 object carga {
 
@@ -16,11 +12,10 @@ object carga {
 	}
 
 	method controles() {
-		keyboard.up().onPressDo({ tanquesito.cambiarTanque(up)})
-		keyboard.down().onPressDo({ tanquesito.cambiarTanque(down)})
-		keyboard.left().onPressDo({ tanquesito.cambiarTanque(left)})
-		keyboard.right().onPressDo({ tanquesito.cambiarTanque(right)})
-		keyboard.space().onPressDo({ tanquesito.ataque()})
+		keyboard.up().onPressDo({ pacman1.moverPacman(up)})
+		keyboard.down().onPressDo({ pacman1.moverPacman(down)})
+		keyboard.left().onPressDo({ pacman1.moverPacman(left)})
+		keyboard.right().onPressDo({ pacman1.moverPacman(right)})
 	}
 
 }
