@@ -2,6 +2,11 @@ import wollok.game.*
 import movimiento.*
 import pacman1.*
 
+class Visual {
+	var property image
+	var property position = game.origin()
+}
+
 object carga {
 
 	const property muros = []
