@@ -1,6 +1,6 @@
 import wollok.game.*
 
-object Muro {
+/*object Muro {
 
 	var property position
 
@@ -9,4 +9,15 @@ object Muro {
 		game.addVisual(self)
 	}
 
+}*/
+
+object muro {
+	method agregarBloque(x, y, bloque){
+		game.addVisualIn(bloque, game.at(x,y))
+	}
+}
+
+class Muros{
+	method image()
+	method impideElPaso() = false
 }

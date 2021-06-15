@@ -1,38 +1,34 @@
 import visuales.*
+import wollok.game.*
+import snake.*
 
-class Frutas inherits Visual{
-	var property energia
-	
-	// implementacion comer fruta (ejemplo otro juego)  
-	/*method colisionadoPor(personaje) {
-		if (personaje.tieneEspatula()){ 
-			personaje.agarrarIngrediente(self)
-		 	score += 1
-		 	personaje.cuantasMonedas()
-	   }
-	   else{
-	      	game.say(personaje, "¡Me falta la espátula!")
-	   }
- 	nivel.ubicarAleatoriamente(self)
-	}
-	*/
+class Frutas {
+
+	var property position = game.at(0.randomUpTo(game.width()).truncate(0), 0.randomUpTo(game.height()).truncate(0))
 
 }
 
-class Frutilla inherits Frutas(image = "frutilla.png",energia = 20){
-	
-}
-class Cereza inherits Frutas(image = "cereza.png",energia = 15){
-	
-}
-class Manzana inherits Frutas(image = "manzana.png",energia = 10){
-	
+class Banana inherits Frutas {
+
+	const property energia = 0.2
+
+	method image() = "banana.png"
+
 }
 
+class Apple inherits Frutas {
 
+	const property energia = 0.7
 
-// ubicacion frutas aleatorias con colecciones
-//[new Frutilla(),new Cereza(),new Manzana()].forEach { ing =>  
-//			game.addVisual(ing)
-//			self.ubicarAleatoriamente(ing) 
-//		}
+	method image() = "apple.png"
+
+}
+
+class Strawberry inherits Frutas {
+
+	const property energia = 1.5
+
+	method image() = "strawberry.png"
+
+}
+

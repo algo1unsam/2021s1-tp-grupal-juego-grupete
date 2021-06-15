@@ -10,17 +10,9 @@ object up {
 		}
 	}
 
-	method mover(cosa) {
-		return cosa.position().up(1)
-	}
-
-	method movString() {
-		return "up"
-	}
-
 }
 
-object down{
+object down {
 
 	method mov(cosa) {
 		if (cosa.position().y() > 0) {
@@ -28,14 +20,6 @@ object down{
 		} else {
 			return cosa.position()
 		}
-	}
-
-	method mover(cosa) {
-		return cosa.position().down(1)
-	}
-
-	method movString() {
-		return "down"
 	}
 
 }
@@ -50,14 +34,6 @@ object left {
 		}
 	}
 
-	method mover(cosa) {
-		return cosa.position().left(1)
-	}
-
-	method movString() {
-		return "left"
-	}
-
 }
 
 object right {
@@ -68,14 +44,6 @@ object right {
 		} else {
 			return cosa.position()
 		}
-	}
-
-	method mover(cosa) {
-		return cosa.position().right(1)
-	}
-
-	method movString() {
-		return "right"
 	}
 
 }
