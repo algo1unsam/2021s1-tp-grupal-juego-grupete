@@ -11,8 +11,6 @@ program juego {
 	game.boardGround("background.jpg")
 		// tamaño celda
 	game.cellSize(32)
-		// jugador 1
-		// game.addVisualCharacter(pacman)
 	carga.creacion()
 		// inicializacion del juego
 	game.start()

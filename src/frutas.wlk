@@ -10,7 +10,7 @@ class Frutas {
 
 class Banana inherits Frutas {
 
-	const property energia = 0.2
+	const property energia = 0.5
 
 	method image() = "banana.png"
 
@@ -18,7 +18,7 @@ class Banana inherits Frutas {
 
 class Apple inherits Frutas {
 
-	const property energia = 0.7
+	const property energia = 0.9
 
 	method image() = "apple.png"
 
@@ -26,7 +26,7 @@ class Apple inherits Frutas {
 
 class Strawberry inherits Frutas {
 
-	const property energia = 1.5
+	const property energia = 2
 
 	method image() = "strawberry.png"
 
