@@ -2,11 +2,11 @@ import wollok.game.*
 
 object up {
 
-	method mov(cosa) {
-		if (cosa.position().y() < game.height() - 1) {
-			return cosa.position().up(1)
+	method mov(primero, ultimo) {
+		if (primero.position().y() < game.height() - 1) {
+			return ultimo.position().up(1)
 		} else {
-			return cosa.position()
+			return ultimo.position()
 		}
 	}
 
@@ -14,11 +14,11 @@ object up {
 
 object down {
 
-	method mov(cosa) {
-		if (cosa.position().y() > 0) {
-			return cosa.position().down(1)
+	method mov(primero, ultimo) {
+		if (primero.position().y() > 0) {
+			return ultimo.position().down(1)
 		} else {
-			return cosa.position()
+			return ultimo.position()
 		}
 	}
 
@@ -26,11 +26,11 @@ object down {
 
 object left {
 
-	method mov(cosa) {
-		if (cosa.position().x() > 0) {
-			return cosa.position().left(1)
+	method mov(primero, ultimo) {
+		if (primero.position().x() > 0) {
+			return ultimo.position().left(1)
 		} else {
-			return cosa.position()
+			return ultimo.position()
 		}
 	}
 
@@ -38,11 +38,11 @@ object left {
 
 object right {
 
-	method mov(cosa) {
-		if (cosa.position().x() < game.width() - 1) {
-			return cosa.position().right(1)
+	method mov(primero, ultimo) {
+		if (primero.position().x() < game.width() - 1) {
+			return ultimo.position().right(1)
 		} else {
-			return cosa.position()
+			return ultimo.position()
 		}
 	}
 
