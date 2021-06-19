@@ -3,25 +3,36 @@ import movimiento.*
 import snake.*
 import frutas.*
 
-class Visual {
-
-// var property image
-// var property position = game.origin()
-}
-
 object carga {
 
+	var property image = "menu.png"
 	const banana = new Banana(energia = 4)
-	const property muros = []
+	var property position = game.at(0, 0)
 
 	method creacion() {
+		game.removeVisual(self)
 		game.addVisual(head)
-			// game.addVisual(eslabon1)
+		game.addVisual(eslabon)
 		game.addVisual(banana)
 		self.snakeControl()
 		snake.avanzar()
-		game.whenCollideDo(head, { fruta => snake.eat(fruta)})
+		game.onCollideDo(head, { objeto => objeto.colision()})
 	}
+
+	method menu() {
+		game.addVisual(self)
+		keyboard.enter().onPressDo{ self.creacion()}
+	}
+
+	method gameOver() {
+		game.clear()
+		self.image("gameover.png")
+		game.addVisual(self)
+		snake.restart()
+		keyboard.enter().onPressDo{ self.creacion()}
+		//game.say(head, "puntaje: " + snake.puntos().toString())
+	}
+	
 
 	method snakeControl() {
 		keyboard.up().onPressDo{ head.direction(up)}
@@ -31,4 +42,8 @@ object carga {
 	}
 
 }
+/*object puntaje {
+	var property position = game.at(-1,2)
+	var property image = "backgroung.png"
+}*/
 

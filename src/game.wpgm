@@ -4,14 +4,10 @@ import visuales.*
 
 program juego {
 	game.title("Snake")
-		// tamaño pantalla
 	game.height(15)
-	game.width(25)
-		// fondo
+	game.width(20)	
 	game.boardGround("background.jpg")
-		// tamaño celda
 	game.cellSize(32)
-	carga.creacion()
-		// inicializacion del juego
+	carga.menu()
 	game.start()
 }

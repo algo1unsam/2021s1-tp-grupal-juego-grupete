@@ -3,11 +3,7 @@ import wollok.game.*
 object up {
 
 	method mov(head) {
-		if (head.position().y() < game.height() - 1) {
-			return head.position().up(1)
-		} else {
-			return head.position()
-		}
+		return head.position().up(1)
 	}
 
 }
@@ -15,11 +11,7 @@ object up {
 object down {
 
 	method mov(head) {
-		if (head.position().y() > 0) {
-			return head.position().down(1)
-		} else {
-			return head.position()
-		}
+		return head.position().down(1)
 	}
 
 }
@@ -27,11 +19,7 @@ object down {
 object left {
 
 	method mov(head) {
-		if (head.position().x() > 0) {
-			return head.position().left(1)
-		} else {
-			return head.position()
-		}
+		return head.position().left(1)
 	}
 
 }
@@ -39,11 +27,7 @@ object left {
 object right {
 
 	method mov(head) {
-		if (head.position().x() < game.width() - 1) {
-			return head.position().right(1)
-		} else {
-			return head.position()
-		}
+		return head.position().right(1)
 	}
 
 }
