@@ -1,0 +1,46 @@
+import frutas.*
+import snake.*
+import wollok.game.*
+import visuales.*
+
+describe "snake" {
+
+	const banana = new Banana()
+	const apple = new Apple()
+	const orange = new Orange()
+	const strawberry = new Strawberry()
+
+	fixture {
+		carga.menu()
+		carga.creacion()
+		game.addVisual(banana)
+		game.addVisual(apple)
+		game.addVisual(orange)
+		game.addVisual(strawberry)
+	}
+
+	test "testear puntajes" {
+		snake.eat(banana)
+		assert.equals(20, snake.puntos())
+		snake.eat(apple)
+		assert.equals(30, snake.puntos())
+		snake.eat(orange)
+		assert.equals(35, snake.puntos())
+		snake.eat(strawberry)
+		assert.equals(50, snake.puntos())
+	}
+	
+	test "testear velocidad" {
+		snake.eat(banana)
+		assert.equals(7, snake.speed())
+		snake.eat(apple)
+		apple.bonus()
+		assert.equals(16, snake.speed())
+		snake.eat(orange)
+		assert.equals(16.5, snake.speed())
+		snake.eat(strawberry)
+		assert.equals(18, snake.speed())
+	}
+
+}
+

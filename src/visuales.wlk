@@ -6,10 +6,14 @@ import frutas.*
 object carga {
 
 	var property image = "menu.png"
-	const banana = new Banana(energia = 4)
+	const banana = new Banana()
 	var property position = game.at(0, 0)
+	var property inverted = false
 
 	method creacion() {
+		if (game.hasVisual(puntaje)) {
+			game.removeVisual(puntaje)
+		}
 		game.removeVisual(self)
 		game.addVisual(head)
 		game.addVisual(eslabon)
@@ -28,22 +32,37 @@ object carga {
 		game.clear()
 		self.image("gameover.png")
 		game.addVisual(self)
+		game.addVisual(puntaje)
+		game.say(puntaje, "puntaje: " + snake.puntos().toString())
 		snake.restart()
 		keyboard.enter().onPressDo{ self.creacion()}
-		//game.say(head, "puntaje: " + snake.puntos().toString())
 	}
-	
 
 	method snakeControl() {
-		keyboard.up().onPressDo{ head.direction(up)}
-		keyboard.down().onPressDo{ head.direction(down)}
-		keyboard.left().onPressDo{ head.direction(left)}
-		keyboard.right().onPressDo{ head.direction(right)}
+		keyboard.up().onPressDo{ if (inverted) {
+				head.direction(down)
+			} else head.direction(up)
+		}
+		keyboard.down().onPressDo{ if (inverted) {
+				head.direction(up)
+			} else head.direction(down)
+		}
+		keyboard.left().onPressDo{ if (inverted) {
+				head.direction(right)
+			} else head.direction(left)
+		}
+		keyboard.right().onPressDo{ if (inverted) {
+				head.direction(left)
+			} else head.direction(right)
+		}
 	}
 
 }
-/*object puntaje {
-	var property position = game.at(-1,2)
-	var property image = "backgroung.png"
-}*/
+
+object puntaje {
+
+	var property position = game.at(14, 10)
+	var property image = "snake.png"
+
+}
 

@@ -5,35 +5,64 @@ import snake.*
 class Frutas {
 
 	var property position = game.at(0.randomUpTo(game.width()).truncate(0), 0.randomUpTo(game.height()).truncate(0))
+	const property energia = 0
 
-
-	method colision(){
-		snake.eat(self)
+	method bonus() {
 	}
+
+	method colision() {
+		carga.inverted(false)
+		snake.eat(self)
+		self.bonus()
+	}
+
 }
 
 class Banana inherits Frutas {
 
-	const property energia = 0.5
+	override method energia() = 2
 
 	method image() = "banana.png"
 
 }
 
-
 class Apple inherits Frutas {
 
-	const property energia = 0.9
+	override method energia() = 1
 
 	method image() = "apple.png"
+
+	override method bonus() {
+		 
+		snake.speed(snake.speed() * 2)
+	}
 
 }
 
 class Strawberry inherits Frutas {
 
-	const property energia = 2
+	override method energia() = 1.5
 
 	method image() = "strawberry.png"
+
+	override method bonus() {
+		game.removeVisual(snake.eslabones().last())
+		snake.eslabones().remove(snake.eslabones().last())
+		game.removeVisual(snake.eslabones().last())
+		snake.eslabones().remove(snake.eslabones().last())
+	}
+
+}
+
+class Orange inherits Frutas {
+
+	override method energia() = 0.5
+
+	method image() = "orange.png"
+
+	override method bonus() {
+		carga.inverted(true)
+	}
 
 }
 
