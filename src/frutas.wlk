@@ -12,8 +12,8 @@ class Frutas {
 
 	method colision() {
 		carga.inverted(false)
-		snake.eat(self)
 		self.bonus()
+		snake.eat(self)
 	}
 
 }
