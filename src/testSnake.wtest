@@ -29,7 +29,7 @@ describe "snake" {
 		snake.eat(strawberry)
 		assert.equals(50, snake.puntos())
 	}
-	
+
 	test "testear velocidad" {
 		snake.eat(banana)
 		assert.equals(7, snake.speed())

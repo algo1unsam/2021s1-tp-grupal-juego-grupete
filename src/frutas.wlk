@@ -33,7 +33,6 @@ class Apple inherits Frutas {
 	method image() = "apple.png"
 
 	override method bonus() {
-		 
 		snake.speed(snake.speed() * 2)
 	}
 
@@ -46,10 +45,12 @@ class Strawberry inherits Frutas {
 	method image() = "strawberry.png"
 
 	override method bonus() {
+		if (snake.eslabones().size() > 2){
 		game.removeVisual(snake.eslabones().last())
 		snake.eslabones().remove(snake.eslabones().last())
 		game.removeVisual(snake.eslabones().last())
 		snake.eslabones().remove(snake.eslabones().last())
+		}
 	}
 
 }
